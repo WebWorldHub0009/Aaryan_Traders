@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import statsImage1 from "../assets/images/hero/hero1.png"; // Replace with industrial image
-import statsImage2 from "../assets/images/hero/hero3.png"; // Replace with industrial image
+import statsImage2 from "../assets/images/collection3.jpg"; // Replace with industrial image
 import bgDiamond from "../assets/images/hero/bg.jpg";
 
 import { FaCogs, FaUsers, FaTruckMoving, FaIndustry } from "react-icons/fa";

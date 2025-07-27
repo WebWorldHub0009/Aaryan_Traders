@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import img1 from "../assets/images/hero/hero1.png";
-import img2 from "../assets/images/hero/hero2.png";
-import img3 from "../assets/images/hero/hero3.png";
-import img4 from "../assets/images/hero/hero4.png";
-import img5 from "../assets/images/hero/hero5.png";
-import img6 from "../assets/images/hero/hero1.png";
+import img1 from "../assets/images/collection1.jpg";
+import img2 from "../assets/images/collection2.jpg";
+import img3 from "../assets/images/collection3.jpg";
+import img4 from "../assets/images/collection4.jpg";
+import img5 from "../assets/images/collection5.jpg";
+import img6 from "../assets/images/collection6.jpg";
 import { Link } from "react-router-dom";
 
 const fadeInUp = {

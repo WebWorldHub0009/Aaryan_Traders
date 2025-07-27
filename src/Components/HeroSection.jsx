@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import bgImage from "../assets/images/hero/bg2.jpg";
+import bgImage from "../assets/images/herobg.png";
 import image1 from "../assets/images/hero/hero1.png";
 import image2 from "../assets/images/hero/hero3.png";
 import image3 from "../assets/images/hero/hero4.png";
@@ -59,12 +59,12 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#00000028] z-0" />
+      <div className="absolute inset-0 bg-[#572c081a] z-0" />
 
       {/* Text Section */}
       <div className="w-full md:w-[50%] px-6 md:px-16 py-16 flex flex-col justify-center z-10">
         <motion.span
-          className="uppercase tracking-widest text-sm text-white font-medium"
+          className="uppercase tracking-widest text-sm text-black font-medium"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -72,16 +72,16 @@ const HeroSection = () => {
           Aaryan Traders | Material Handling Experts
         </motion.span>
 
-        <h1 className="text-3xl md:text-6xl font-extrabold text-[#704f3f] mt-4 min-h-[110px] md:min-h-[130px] leading-tight">
+        <h1 className="text-3xl md:text-6xl font-extrabold text-[#5e3200] mt-4 min-h-[110px] md:min-h-[130px] leading-tight">
           {normalPart}
-          <span className="bg-gradient-to-r from-white to-[#fff6ed] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#5e3200] to-[#863c00] bg-clip-text text-transparent">
             {highlightedPart}
           </span>
-          <span className="text-white animate-pulse w-[1ch] inline-block">|</span>
+          <span className="text-[#5e3200] animate-pulse w-[1ch] inline-block">|</span>
         </h1>
 
         <motion.p
-          className="mt-6 text-gray-200 text-lg md:text-lg leading-relaxed max-w-xl"
+          className="mt-6 text-gray-600 text-lg md:text-lg leading-relaxed max-w-xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -92,7 +92,7 @@ const HeroSection = () => {
 
         <Link to="/products">
           <motion.button
-            className="cursor-pointer mt-8 px-7 py-3 text-lg font-semibold rounded-lg bg-[#5C4033] text-white shadow-md hover:bg-[#A9746E] hover:text-black transition-all duration-300 w-fit"
+            className="cursor-pointer mt-8 px-7 py-3 text-lg font-semibold rounded-lg bg-[#5e3200] text-white shadow-md hover:bg-[#A9746E] hover:text-black transition-all duration-300 w-fit"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
