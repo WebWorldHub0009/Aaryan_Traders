@@ -6,6 +6,7 @@ import FloatingButtons from "./Components/FloatingButtons"
 import Home from "./Pages/Home"
 import About from "./Pages/About"
 import RawMaterial from "./Pages/RawMaterial"
+import Showcase from "./Pages/Showcase"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/raw-materials' element={<RawMaterial/>}/>
+      <Route path='/showcase' element={<Showcase/>}/>
     </Routes>
     <Footer/>
     <FloatingButtons/>
