@@ -5,16 +5,22 @@ import image1 from "../assets/images/hero/hero1.png";
 import image2 from "../assets/images/hero/hero3.png";
 import image3 from "../assets/images/hero/hero4.png";
 import image4 from "../assets/images/hero/hero5.png";
+import image5 from "../assets/images/hero/thread.png"; // New
+import image6 from "../assets/images/hero/shoewiththread.png"; // New
 import { Link } from "react-router-dom";
 
+// Updated headings (6 items total)
 const headings = [
-  { main: "Efficient", highlight: " Lifting" },
+  { main: "Reliable and Quality", highlight: " Work" },
   { main: "Durability in", highlight: " Design" },
-  { main: "Reliable", highlight: " Handling" },
+  { main: "Efficient and Classy", highlight: " Look" },
   { main: "Crafted for", highlight: " Industry" },
+  { main: "Premium", highlight: " Shoe Threads" }, // NEW for image5
+  { main: "Boards &", highlight: " Linings Ready" }, // NEW for image6
 ];
 
-const images = [image1, image2, image3, image4];
+// Updated images (6 items total)
+const images = [image1, image2, image3, image4, image5, image6];
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
@@ -44,7 +50,7 @@ const HeroSection = () => {
         setCharIndex(0);
         setIndex(nextIndex);
         setIsTyping(true);
-      }, 1000); // slight gap before next typing starts
+      }, 1000);
     }
 
     return () => clearTimeout(timeout);

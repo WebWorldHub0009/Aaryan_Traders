@@ -1,5 +1,5 @@
 // components/WhyChooseUs.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaTruckMoving,
   FaCogs,
@@ -7,7 +7,7 @@ import {
   FaSmile,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import image from "../assets/images/hero/hero5.png"; // Replace this path if needed
+import image from "../assets/images/hero/hero5.png";
 
 const features = [
   {
@@ -41,11 +41,25 @@ const features = [
 ];
 
 const WhyChooseUs = () => {
+  const [enableAnimation, setEnableAnimation] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setEnableAnimation(window.innerWidth >= 768); // md breakpoint
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const Left = enableAnimation ? motion.div : "div";
+  const Right = enableAnimation ? motion.div : "div";
+
   return (
     <section className="bg-[#F7F3EF] py-16 px-4 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-        {/* Left: Text and Features */}
-        <motion.div
+        {/* Left Section */}
+        <Left
           className="flex-1 w-full"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -79,10 +93,10 @@ const WhyChooseUs = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </Left>
 
-        {/* Right: Image with Diagonal Border */}
-        <motion.div
+        {/* Right Section */}
+        <Right
           className="flex-1 w-full relative"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -90,17 +104,17 @@ const WhyChooseUs = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="relative w-full max-w-md mx-auto">
-            {/* Diagonal Border/Outline */}
+            {/* Diagonal Border */}
             <div className="absolute top-0 left-0 w-full h-[400px] md:h-[500px] rounded-tl-[60px] rounded-br-[60px] border-[6px] border-[#C4B1A1] z-0 pointer-events-none"></div>
 
-            {/* Actual Image */}
+            {/* Image */}
             <img
               src={image}
               alt="Why Choose Us - Aaryan Traders"
               className="relative z-10 w-full h-[100%] object-cover rounded-tl-[60px] rounded-br-[60px]"
             />
           </div>
-        </motion.div>
+        </Right>
       </div>
     </section>
   );

@@ -33,8 +33,8 @@ const Navbar = () => {
   return (
     <div className="w-full z-50 relative">
       {/* Top Header - Desktop only */}
-      <div className="bg-[#5C4033] text-white text-sm py-2 px-4 hidden md:flex justify-between items-center">
-        <div className="flex space-x-4">
+      <div className="bg-[#5C4033] text-white text-sm py-2 px-4 md:flex justify-between items-center">
+        <div className="hidden md:flex space-x-4">
           <a href="mailto:Info@aaryantraders.in" className="flex items-center space-x-1 hover:underline">
             <FaEnvelope className="text-xs" />
             <span>Info@aaryantraders.in</span>
@@ -44,7 +44,7 @@ const Navbar = () => {
             <span>+91 9211036765</span>
           </a>
         </div>
-        <div className="flex space-x-3">
+        <div className="hidden md:flex space-x-3">
           <a href="https://wa.me/919211036765" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaWhatsapp /></a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaInstagram /></a>
           <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaFacebookF /></a>
