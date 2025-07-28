@@ -51,7 +51,7 @@ const CollectionAbout = () => {
           whileInView="visible"
           viewport={{ once: true }}
           custom={1}
-          className="bg-white flex flex-col items-center justify-center text-center p-6 rounded-md shadow-md min-h-[300px] border border-[#8B5E3C]"
+          className="bg-[#ffffff] flex flex-col items-center justify-center text-center p-6 rounded-md shadow-xl min-h-[300px] "
         >
           <h2 className="text-lg font-bold uppercase mb-2 text-[#1A1A1A]">Premium Tools & Supplies</h2>
           <p className="text-base text-[#333] mb-3 tracking-wider">
@@ -79,7 +79,7 @@ const CollectionAbout = () => {
           whileInView="visible"
           viewport={{ once: true }}
           custom={1}
-          className="bg-white flex flex-col items-center justify-center text-center p-6 rounded-md shadow-md min-h-[220px] border border-[#8B5E3C]"
+          className="bg-white flex flex-col items-center justify-center text-center p-6 rounded-xl shadow-md min-h-[220px]"
         >
           <h2 className="text-lg font-bold uppercase mb-2 text-[#1A1A1A]">Trusted Since 2025</h2>
           <p className="text-base text-[#333] mb-3 tracking-wider">
@@ -120,7 +120,7 @@ const CollectionAbout = () => {
           />
         </div>
         <motion.div
-          className="flex flex-col items-center justify-center text-center bg-white p-6 rounded-md shadow-md min-h-[280px] border border-[#8B5E3C]"
+          className="flex flex-col items-center justify-center text-center bg-white p-6 rounded-md shadow-xl min-h-[280px] "
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"

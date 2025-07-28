@@ -23,12 +23,12 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", icon: <FaHome />, href: "#home" },
-    { name: "About", icon: <FaInfoCircle />, href: "#about" },
-    { name: "Raw Materials", icon: <FaBoxes />, href: "#raw-materials" },
-    { name: "Showcase", icon: <FaImages />, href: "#showcase" },
-    { name: "Contact", icon: <FaPhoneAlt />, href: "#contact" },
-    { name: "Documents", icon: <FaFileAlt />, href: "#documents" },
+    { name: "Home", icon: <FaHome />, href: "/" },
+    { name: "About", icon: <FaInfoCircle />, href: "/about" },
+    { name: "Raw Materials", icon: <FaBoxes />, href: "/raw-materials" },
+    { name: "Showcase", icon: <FaImages />, href: "/showcase" },
+    { name: "Contact", icon: <FaPhoneAlt />, href: "/contact" },
+    { name: "Documents", icon: <FaFileAlt />, href: "/documents" },
   ];
 
   return (
@@ -36,7 +36,7 @@ const Navbar = () => {
       {/* Top Header */}
       <div className="bg-[#5C4033] text-white text-sm py-2 px-4 flex flex-col md:flex-row md:justify-between md:items-center gap-y-2 md:gap-y-0">
         {/* Left - Email & Phone */}
-        <div className="flex flex-wrap items-center space-x-4">
+        <div className="hidden md:flex flex-wrap items-center space-x-4">
           <a
             href="mailto:Info@aaryantraders.in"
             className="flex items-center space-x-1 hover:underline transition"
@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
 
         {/* Center - Social Icons */}
-        <div className="flex justify-center space-x-3 text-white text-base">
+        <div className="hidden md:flex justify-center space-x-3 text-white text-base">
           <a
             href="https://wa.me/919211036765"
             target="_blank"
@@ -104,7 +104,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-white shadow-md py-2">
+      <nav className="shadow-xl py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
