@@ -90,7 +90,7 @@ const HeroSection = () => {
           Aaryan Traders ensures durability, affordability, and fast delivery for all your handling needs.
         </motion.p>
 
-        <Link to="/products">
+        <Link to="/raw-materials">
           <motion.button
             className="cursor-pointer mt-8 px-7 py-3 text-lg font-semibold rounded-lg bg-[#5e3200] text-white shadow-md hover:bg-[#A9746E] hover:text-black transition-all duration-300 w-fit"
             initial={{ opacity: 0, y: 40 }}

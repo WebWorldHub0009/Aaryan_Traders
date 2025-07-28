@@ -75,6 +75,11 @@ export default function Footer() {
               ["Showcase", "/showcase"],
               ["Contact", "/contact"],
               ["Documents", "/documents"],
+              ["Cookie Policy", "/cookie"],
+              ["Shipping Policy", "/shipping"],
+              ["Refund and Return Policy", "/refund"],
+              ["Privacy Policy", "/privacy"],
+              ["Terms & Conditions", "/terms-conditions"]
             ].map(([text, link], i) => (
               <li key={i}>
                 <Link to={link} className="hover:text-yellow-900 transition duration-300">
@@ -84,7 +89,7 @@ export default function Footer() {
             ))}
           </ul>
 
-          {/* Email & Contact */}
+          {/* Email & Contact
           <h4 className="mt-6 text-brown-900 font-semibold">Contact</h4>
           <ul className="mt-2 space-y-2 text-gray-800">
             <li>
@@ -105,7 +110,7 @@ export default function Footer() {
                 <span>+91 92110 36765</span>
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
 
         {/* Our Services (Clickable) */}

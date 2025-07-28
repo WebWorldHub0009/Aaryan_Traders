@@ -85,7 +85,7 @@ const RawMaterials = () => {
   return (
     <>
       <RawMaterialHero />
-      <section className="py-16 px-4 md:px-12 bg-[#fffaf5]">
+      <section className="py-16 px-4 md:px-12 bg-[#fffaf5]" id="rawmaterialsection">
         <div className="max-w-7xl mx-auto text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#3D2B1F]">
             Explore Our Raw Materials
@@ -122,7 +122,7 @@ const RawMaterials = () => {
                 </div>
 
                 <Link to="/contact">
-                  <button className="mt-4 bg-[#a75a13] hover:bg-[#8c490f] text-white text-sm font-medium px-4 py-2 rounded-md transition w-full">
+                  <button className="cursor-pointer mt-4 bg-[#a75a13] hover:bg-[#8c490f] text-white text-sm font-medium px-4 py-2 rounded-md transition w-full">
                     Get Enquiry
                   </button>
                 </Link>

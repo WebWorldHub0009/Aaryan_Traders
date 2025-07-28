@@ -85,8 +85,8 @@ const CollectionAbout = () => {
           <p className="text-base text-[#333] mb-3 tracking-wider">
             Supplying reliable handling equipment to Delhi’s finest industries.
           </p>
-          <Link to="/gallery">
-            <button className="bg-white text-[#1A1A1A] border border-[#1A1A1A] font-semibold px-5 py-2 text-xs uppercase hover:bg-[#1A1A1A] hover:text-white transition rounded-full">
+          <Link to="/showcase">
+            <button className="cursor-pointer bg-white text-[#1A1A1A] border border-[#1A1A1A] font-semibold px-5 py-2 text-xs uppercase hover:bg-[#1A1A1A] hover:text-white transition rounded-full">
               View Showcase
             </button>
           </Link>

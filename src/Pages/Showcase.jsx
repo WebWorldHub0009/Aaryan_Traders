@@ -11,12 +11,17 @@ import img5 from "../assets/images/showcase/s5.png";
 import img6 from "../assets/images/showcase/s6.png";
 import img7 from "../assets/images/showcase/s7.png";
 import img8 from "../assets/images/showcase/s8.png";
-import img9 from "../assets/images/showcase/s1.png";
-import img10 from "../assets/images/showcase/s2.png";
-import img11 from "../assets/images/showcase/s3.png";
+import img9 from "../assets/images/showcase/s9.png";
+import img10 from "../assets/images/showcase/s10.png";
+import img11 from "../assets/images/showcase/s11.png";
+import img12 from "../assets/images/showcase/s12.png";
+import img13 from "../assets/images/showcase/s14.png";
+import img14 from "../assets/images/showcase/s15.png";
+// import img15 from "../assets/images/showcase/s15.png";
+
 import GalleryHero from "../Components/GalleryHero";
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -60,9 +65,12 @@ const Gallery = () => {
               "col-span-2 row-span-2", // img6
               "col-span-2 row-span-2", // img7
               "col-span-2 row-span-2", // img8
-              "col-span-1 row-span-2", // img9
+              "col-span-2 row-span-2", // img9
               "col-span-2 row-span-2", // img10
-              "col-span-3 row-span-2", // img11
+              "col-span-2 row-span-2", // img11
+              "col-span-2 row-span-2", // img11
+              "col-span-2 row-span-2", // img11
+              "col-span-2 row-span-2", // img11
             ];
 
             return (
@@ -76,7 +84,7 @@ const Gallery = () => {
                 <img
                   src={img}
                   alt={`Gallery ${i + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fit"
                 />
               </motion.div>
             );

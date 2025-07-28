@@ -69,7 +69,7 @@ const WebsiteStats = () => {
               <h3 className="text-base font-semibold text-[#2C2C2C] leading-snug tracking-wide italiana-font">
                 Reliable Equipment for Every Industrial Need
               </h3>
-              <Link to="/gallery">
+              <Link to="/showcase">
                 <button className="mt-4 px-5 py-2 border border-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-white transition-all duration-300 text-sm font-semibold rounded-full">
                   View Showcase
                 </button>
@@ -108,8 +108,8 @@ const WebsiteStats = () => {
               <h3 className="text-base font-semibold text-[#2C2C2C] leading-snug tracking-wide italiana-font">
                 Reliable Equipment for Every Industrial Need
               </h3>
-              <Link to="/gallery">
-                <button className="mt-4 px-5 py-2 border border-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-white transition-all duration-300 text-sm font-semibold rounded-full">
+              <Link to="/showcase">
+                <button className="cursor-pointer mt-4 px-5 py-2 border border-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-white transition-all duration-300 text-sm font-semibold rounded-full">
                   View Showcase
                 </button>
               </Link>

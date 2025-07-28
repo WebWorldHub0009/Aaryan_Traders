@@ -39,7 +39,7 @@ const RawMaterialHero = () => {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/raw-materials"
+            href="#rawmaterialsection"
             className="inline-block bg-[#a75a13] hover:bg-[#81430e] transition text-white font-medium px-6 py-3 rounded-md shadow-md"
           >
             Explore Raw Materials

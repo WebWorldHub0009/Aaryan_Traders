@@ -9,6 +9,11 @@ import RawMaterial from "./Pages/RawMaterial"
 import Showcase from "./Pages/Showcase"
 import Contact from "./Pages/Contact"
 import Certificates from "./Pages/Certificates"
+import TermsAndConditions from "./Pages/TermsandConditions"
+import ShippingPolicy from "./Pages/ShippingPolicy"
+import RefundPolicy from "./Pages/RefundPolicy"
+import PrivacyPolicy from "./Pages/PrivacyPolicy"
+import CookiePolicy from "./Pages/CookiePolicy"
 
 function App() {
   return (
@@ -22,6 +27,11 @@ function App() {
       <Route path='/showcase' element={<Showcase/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/documents' element={<Certificates/>}/>
+      <Route path='/terms-conditions' element={<TermsAndConditions/>}/>
+      <Route path='/shipping' element={<ShippingPolicy/>}/>
+      <Route path='/refund' element={<RefundPolicy/>}/>
+      <Route path='/privacy' element={<PrivacyPolicy/>}/>
+      <Route path='/cookie' element={<CookiePolicy/>}/>
     </Routes>
     <Footer/>
     <FloatingButtons/>
