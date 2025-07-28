@@ -68,9 +68,9 @@ const Gallery = () => {
               "col-span-2 row-span-2", // img9
               "col-span-2 row-span-2", // img10
               "col-span-2 row-span-2", // img11
-              "col-span-2 row-span-2", // img11
-              "col-span-2 row-span-2", // img11
-              "col-span-2 row-span-2", // img11
+              "col-span-2 row-span-2", // img12
+              "col-span-2 row-span-2", // img13
+              "col-span-2 row-span-2", // img14
             ];
 
             return (

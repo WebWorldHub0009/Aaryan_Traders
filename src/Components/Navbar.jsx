@@ -16,8 +16,7 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
-
-import logo from "../assets/images/logo.png"; // ✅ Logo path
+import logo from "../assets/images/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,134 +31,113 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full z-50">
-      {/* Top Header */}
-      <div className="bg-[#5C4033] text-white text-sm py-2 px-4 flex flex-col md:flex-row md:justify-between md:items-center gap-y-2 md:gap-y-0">
-        {/* Left - Email & Phone */}
-        <div className="hidden md:flex flex-wrap items-center space-x-4">
-          <a
-            href="mailto:Info@aaryantraders.in"
-            className="flex items-center space-x-1 hover:underline transition"
-          >
+    <div className="w-full z-50 relative">
+      {/* Top Header - Desktop only */}
+      <div className="bg-[#5C4033] text-white text-sm py-2 px-4 hidden md:flex justify-between items-center">
+        <div className="flex space-x-4">
+          <a href="mailto:Info@aaryantraders.in" className="flex items-center space-x-1 hover:underline">
             <FaEnvelope className="text-xs" />
             <span>Info@aaryantraders.in</span>
           </a>
-          <a
-            href="tel:+919211036765"
-            className="flex items-center space-x-1 hover:underline transition"
-          >
+          <a href="tel:+919211036765" className="flex items-center space-x-1 hover:underline">
             <FaPhone className="text-xs" />
             <span>+91 9211036765</span>
           </a>
         </div>
-
-        {/* Center - Social Icons */}
-        <div className="hidden md:flex justify-center space-x-3 text-white text-base">
-          <a
-            href="https://wa.me/919211036765"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#A9746E]"
-          >
-            <FaWhatsapp />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#A9746E]"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#A9746E]"
-          >
-            <FaFacebookF />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#A9746E]"
-          >
-            <FaLinkedinIn />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#A9746E]"
-          >
-            <FaTwitter />
-          </a>
+        <div className="flex space-x-3">
+          <a href="https://wa.me/919211036765" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaWhatsapp /></a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaInstagram /></a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaFacebookF /></a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaLinkedinIn /></a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-[#A9746E]"><FaTwitter /></a>
         </div>
-
-        {/* Right - UDYAM & GSTIN */}
         <div className="text-sm text-right whitespace-nowrap">
-          <span>UDYAM-DL-06-1063552 | GSTIN: 07DEHPJ2904E1ZT</span>
+          UDYAM-DL-06-1063552 | GSTIN: 07DEHPJ2904E1ZT
         </div>
       </div>
 
       {/* Main Navbar */}
-      <nav className="shadow-xl py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <img
-                src={logo}
-                alt="Aaryan Traders Logo"
-                className="h-18 w-auto object-contain"
-              />
-            </div>
+      <nav className="shadow-xl py-2 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+          {/* Logo */}
+          <img src={logo} alt="Aaryan Traders Logo" className="h-16 w-auto object-contain" />
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex space-x-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="flex items-center space-x-1 text-[#5C4033] hover:text-[#A9746E] font-medium transition duration-300"
-                >
-                  {link.icon}
-                  <span>{link.name}</span>
-                </a>
-              ))}
-            </div>
-
-            {/* Mobile Menu Icon */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="text-[#5C4033] text-2xl focus:outline-none"
+          {/* Desktop Nav */}
+          <div className="hidden md:flex space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="flex items-center space-x-1 text-[#5C4033] hover:text-[#A9746E] font-medium transition duration-300"
               >
-                {menuOpen ? <FaTimes /> : <FaBars />}
-              </button>
-            </div>
+                {link.icon}
+                <span>{link.name}</span>
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Icon */}
+          <div className="md:hidden">
+            <button onClick={() => setMenuOpen(true)} className="text-[#5C4033] text-2xl">
+              <FaBars />
+            </button>
           </div>
         </div>
-
-        {/* Mobile Dropdown */}
-        {menuOpen && (
-          <div className="md:hidden bg-white shadow-md">
-            <div className="flex flex-col px-6 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="flex items-center space-x-2 text-[#5C4033] hover:text-[#A9746E] font-medium transition duration-300"
-                >
-                  {link.icon}
-                  <span>{link.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
       </nav>
+
+      {/* ✅ Mobile Sliding Panel */}
+      <div
+        className={`fixed top-0 left-0 w-72 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Top Row: Logo & Close */}
+        <div className="flex items-center justify-between px-4 py-4 border-b border-gray-300">
+          <img src={logo} alt="Logo" className="h-14" />
+          <button onClick={() => setMenuOpen(false)} className="text-[#5C4033] text-2xl">
+            <FaTimes />
+          </button>
+        </div>
+
+        {/* Nav Links */}
+        <div className="flex flex-col space-y-5 px-6 py-4 border-b border-gray-300">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center space-x-2 text-[#5C4033] hover:text-[#A9746E] font-medium"
+            >
+              {link.icon}
+              <span>{link.name}</span>
+            </a>
+          ))}
+        </div>
+
+        {/* Contact & Info */}
+        <div className="px-6 py-4 space-y-2 text-sm text-gray-700">
+          <div className="flex items-center space-x-2">
+            <FaEnvelope />
+            <a href="mailto:Info@aaryantraders.in" className="hover:underline">Info@aaryantraders.in</a>
+          </div>
+          <div className="flex items-center space-x-2">
+            <FaPhone />
+            <a href="tel:+919211036765" className="hover:underline">+91 9211036765</a>
+          </div>
+          <div className="pt-2 text-xs text-gray-600">
+            <p>UDYAM-DL-06-1063552</p>
+            <p>GSTIN: 07DEHPJ2904E1ZT</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay for mobile menu */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-transparent backdrop-blur-sm bg-opacity-40 z-40"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
     </div>
   );
 };
