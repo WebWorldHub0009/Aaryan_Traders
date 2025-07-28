@@ -80,7 +80,7 @@ const OwnerCard = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-14">
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-14 items-center">
             <Link to="/contact">
               <button className="cursor-pointer bg-[#a75a13] hover:bg-[#81430e] text-white px-6 py-2 rounded-md transition">
                 Contact Owner

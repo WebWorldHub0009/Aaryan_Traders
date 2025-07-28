@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-// Import your 11 images
 import img1 from "../assets/images/showcase/s1.png";
 import img2 from "../assets/images/showcase/s2.png";
 import img3 from "../assets/images/showcase/s3.png";
@@ -17,7 +16,6 @@ import img11 from "../assets/images/showcase/s11.png";
 import img12 from "../assets/images/showcase/s12.png";
 import img13 from "../assets/images/showcase/s14.png";
 import img14 from "../assets/images/showcase/s15.png";
-// import img15 from "../assets/images/showcase/s15.png";
 
 import GalleryHero from "../Components/GalleryHero";
 
@@ -39,59 +37,59 @@ const Gallery = () => {
 
   const prevImage = () => {
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
-    setCurrentIndex(prevIndex);
     setSelectedImage(images[prevIndex]);
+    setCurrentIndex(prevIndex);
   };
 
   const nextImage = () => {
     const nextIndex = (currentIndex + 1) % images.length;
-    setCurrentIndex(nextIndex);
     setSelectedImage(images[nextIndex]);
+    setCurrentIndex(nextIndex);
   };
+
+  const gridStyles = [
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-3 row-span-2",
+    "col-span-3 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-2 row-span-2",
+  ];
 
   return (
     <>
       <GalleryHero />
 
-      <section id="gallery-section" className="bg-[#000000] px-4 md:px-10 py-16">
-        <div className="grid grid-cols-6 auto-rows-[150px] gap-4">
-          {images.map((img, i) => {
-            const gridStyles = [
-              "col-span-2 row-span-2", // img1
-              "col-span-2 row-span-2", // img2
-              "col-span-2 row-span-2", // img3
-              "col-span-3 row-span-2", // img4
-              "col-span-3 row-span-2", // img5
-              "col-span-2 row-span-2", // img6
-              "col-span-2 row-span-2", // img7
-              "col-span-2 row-span-2", // img8
-              "col-span-2 row-span-2", // img9
-              "col-span-2 row-span-2", // img10
-              "col-span-2 row-span-2", // img11
-              "col-span-2 row-span-2", // img12
-              "col-span-2 row-span-2", // img13
-              "col-span-2 row-span-2", // img14
-            ];
-
-            return (
-              <motion.div
-                key={i}
-                className={`overflow-hidden shadow-lg cursor-pointer hover:brightness-110 transition-all duration-300 ${gridStyles[i]}`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => openImage(i)}
-              >
-                <img
-                  src={img}
-                  alt={`Gallery ${i + 1}`}
-                  className="w-full h-full object-fit"
-                />
-              </motion.div>
-            );
-          })}
+      <section className="bg-[#000000] px-4 md:px-10 py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 auto-rows-[150px] gap-4">
+          {images.map((img, i) => (
+            <motion.div
+              key={i}
+              className={`overflow-hidden shadow-lg cursor-pointer hover:brightness-110 transition-all duration-300 ${
+                gridStyles[i] || "col-span-2 row-span-2"
+              }`}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => openImage(i)}
+            >
+              <img
+                src={img}
+                alt={`Gallery ${i + 1}`}
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </motion.div>
+          ))}
         </div>
 
-        {/* Modal */}
+        {/* Modal View */}
         <AnimatePresence>
           {selectedImage && (
             <motion.div
@@ -103,30 +101,34 @@ const Gallery = () => {
             >
               <motion.div
                 key={selectedImage}
-                className="relative max-w-4xl w-full"
-                initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -50, opacity: 0 }}
+                className="relative w-full max-w-4xl mx-auto"
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -50, opacity: 0 }}
               >
                 <img
                   src={selectedImage}
                   alt="Enlarged"
-                  className="w-full h-auto max-h-[80vh] object-contain rounded-xl"
+                  className="w-full max-h-[80vh] object-contain rounded-xl"
                 />
 
-                {/* Controls */}
+                {/* Close button */}
                 <button
                   className="absolute top-3 right-3 text-white text-xl bg-black/50 p-2 rounded-full"
                   onClick={closeModal}
                 >
                   <FaTimes />
                 </button>
+
+                {/* Prev button */}
                 <button
                   className="absolute left-3 top-1/2 -translate-y-1/2 text-white text-xl bg-black/40 p-2 rounded-full"
                   onClick={prevImage}
                 >
                   <FaArrowLeft />
                 </button>
+
+                {/* Next button */}
                 <button
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-white text-xl bg-black/40 p-2 rounded-full"
                   onClick={nextImage}
