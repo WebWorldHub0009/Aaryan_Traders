@@ -48,7 +48,7 @@ const Gallery = () => {
     <>
       <GalleryHero />
 
-      <section id="gallery-section" className="bg-[#fffaf4] px-4 md:px-10 py-16">
+      <section id="gallery-section" className="bg-[#000000] px-4 md:px-10 py-16">
         <div className="grid grid-cols-6 auto-rows-[150px] gap-4">
           {images.map((img, i) => {
             const gridStyles = [
@@ -68,7 +68,7 @@ const Gallery = () => {
             return (
               <motion.div
                 key={i}
-                className={`overflow-hidden rounded-xl shadow-lg cursor-pointer hover:brightness-110 transition-all duration-300 ${gridStyles[i]}`}
+                className={`overflow-hidden shadow-lg cursor-pointer hover:brightness-110 transition-all duration-300 ${gridStyles[i]}`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => openImage(i)}

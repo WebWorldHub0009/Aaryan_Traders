@@ -7,6 +7,8 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import RawMaterial from "./Pages/RawMaterial"
 import Showcase from "./Pages/Showcase"
+import Contact from "./Pages/Contact"
+import Certificates from "./Pages/Certificates"
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path='/raw-materials' element={<RawMaterial/>}/>
       <Route path='/showcase' element={<Showcase/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/documents' element={<Certificates/>}/>
     </Routes>
     <Footer/>
     <FloatingButtons/>
