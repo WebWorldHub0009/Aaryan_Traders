@@ -68,7 +68,7 @@ const Gallery = () => {
     <>
       <GalleryHero />
 
-      <section className="bg-[#000000] px-4 md:px-10 py-16">
+      <section id="gallery-section" className="bg-[#000000] px-4 md:px-10 py-16">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 auto-rows-[150px] gap-4">
           {images.map((img, i) => (
             <motion.div

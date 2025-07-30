@@ -1,6 +1,6 @@
 // components/RawMaterials.jsx
 import React from "react";
-import { FaAdjust, FaCheckCircle, FaHandPointRight, FaProcedures, FaTags } from "react-icons/fa";
+import { FaHandPointRight, FaTags } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import RawMaterialHero from "../Components/RawMaterialHero";
 
@@ -22,6 +22,7 @@ const rawMaterials = [
     image: m1,
     tag1: "Durable Finish",
     tag2: "Wholesale Ready",
+    price: "₹110",
   },
   {
     title: "EVA Foam Sheets",
@@ -29,6 +30,7 @@ const rawMaterials = [
     image: m2,
     tag1: "Shock Absorbing",
     tag2: "Highly Flexible",
+    price: "₹76",
   },
   {
     title: "Synthetic Uppers",
@@ -36,6 +38,7 @@ const rawMaterials = [
     image: m3,
     tag1: "Stylish Look",
     tag2: "Custom Orders",
+    price: "₹50",
   },
   {
     title: "Leather Boards",
@@ -43,6 +46,7 @@ const rawMaterials = [
     image: m4,
     tag1: "Rigid Support",
     tag2: "Eco Friendly",
+    price: "₹90",
   },
   {
     title: "Insole Padding",
@@ -50,6 +54,7 @@ const rawMaterials = [
     image: m5,
     tag1: "Breathable",
     tag2: "Soft Cushion",
+    price: "₹42",
   },
   {
     title: "Shoe Linings",
@@ -57,6 +62,7 @@ const rawMaterials = [
     image: m6,
     tag1: "Moisture Control",
     tag2: "All Colors",
+    price: "₹54",
   },
   {
     title: "Footwear Adhesives",
@@ -64,6 +70,7 @@ const rawMaterials = [
     image: m7,
     tag1: "Quick Dry",
     tag2: "Strong Grip",
+    price: "₹76",
   },
   {
     title: "Heavy Duty Threads",
@@ -71,6 +78,7 @@ const rawMaterials = [
     image: m8,
     tag1: "High Tensile",
     tag2: "Multiple Shades",
+    price: "₹50",
   },
   {
     title: "PU Sheets",
@@ -78,6 +86,7 @@ const rawMaterials = [
     image: m9,
     tag1: "Anti-Slip",
     tag2: "Flexible Use",
+    price: "₹90",
   },
 ];
 
@@ -112,7 +121,8 @@ const RawMaterials = () => {
                 </h3>
                 <p className="text-sm text-gray-600">{item.desc}</p>
 
-                <div className="flex items-center gap-3 text-sm text-[#a75a13]">
+                {/* Tags Row (without price now) */}
+                <div className="flex flex-wrap items-center gap-2 text-sm text-[#a75a13] mt-2">
                   <span className="flex items-center gap-1 bg-[#fdf0e7] px-2 py-1 rounded-md">
                     <FaHandPointRight className="text-yellow-800" /> {item.tag1}
                   </span>
@@ -121,11 +131,17 @@ const RawMaterials = () => {
                   </span>
                 </div>
 
-                <Link to="/contact">
-                  <button className="cursor-pointer mt-4 bg-[#a75a13] hover:bg-[#8c490f] text-white text-sm font-medium px-4 py-2 rounded-md transition w-full">
-                    Get Enquiry
-                  </button>
-                </Link>
+                {/* Price + Enquiry Button Row */}
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-base font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-md">
+                    {item.price}
+                  </span>
+                  <Link to="/contact">
+                    <button className="cursor-pointer bg-[#a75a13] hover:bg-[#8c490f] text-white text-sm font-medium px-4 py-2 rounded-md transition">
+                      Get Enquiry
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
