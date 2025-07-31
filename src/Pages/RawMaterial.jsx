@@ -138,7 +138,7 @@ const RawMaterials = () => {
                   </span>
                   <Link to="/contact">
                     <button className="cursor-pointer bg-[#a75a13] hover:bg-[#8c490f] text-white text-sm font-medium px-4 py-2 rounded-md transition">
-                      Get Enquiry
+                      Buy Now
                     </button>
                   </Link>
                 </div>
