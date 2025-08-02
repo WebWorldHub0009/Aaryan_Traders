@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaHandPointRight, FaTags, FaUser, FaPhone, FaMapMarkerAlt, FaMoneyBillWave } from "react-icons/fa";
+import { FaHandPointRight, FaTags, FaUser, FaPhone, FaMapMarkerAlt, FaMoneyBillWave, FaShoppingCart, FaStickyNote } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import RawMaterialHero from "../Components/RawMaterialHero";
 
@@ -82,32 +82,32 @@ const RawMaterials = () => {
       <AnimatePresence>
   {selectedProduct && (
     <motion.div
-      className="fixed inset-0 backdrop-blur-2xl bg-opacity-50 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
+        initial={{ scale: 0.85, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
+        exit={{ scale: 0.85, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-white rounded-xl max-w-lg w-full p-6 shadow-xl relative"
+        className="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative"
       >
         {/* Close Button */}
         <button
-          className="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-lg"
+          className="cursor-pointer absolute top-4 right-4 text-gray-500 hover:text-red-500 text-xl"
           onClick={() => setSelectedProduct(null)}
         >
           ✕
         </button>
 
         {/* Product Info */}
-        <div className="flex gap-4 items-center mb-4">
+        <div className="flex gap-4 items-center mb-6 border-b pb-4">
           <img
             src={selectedProduct.image}
             alt={selectedProduct.title}
-            className="w-20 h-20 object-cover rounded-md"
+            className="w-20 h-20 object-cover rounded-lg border"
           />
           <div>
             <h3 className="font-bold text-lg text-[#3D2B1F]">
@@ -121,37 +121,42 @@ const RawMaterials = () => {
         </div>
 
         {/* Checkout Form */}
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <FaUser className="text-[#a75a13]" />
+        <div className="grid grid-cols-1 gap-4">
+          {/* Name */}
+          <div className="flex items-center bg-gray-50 border rounded-lg px-3 py-2">
+            <FaUser className="text-[#a75a13] mr-2" />
             <input
               type="text"
               placeholder="Full Name"
-              className="border rounded-md px-3 py-2 w-full focus:ring-2 focus:ring-[#a75a13]"
+              className="bg-transparent outline-none w-full"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
             />
           </div>
-          <div className="flex items-center gap-2">
-            <FaPhone className="text-[#a75a13]" />
+
+          {/* Phone */}
+          <div className="flex items-center bg-gray-50 border rounded-lg px-3 py-2">
+            <FaPhone className="text-[#a75a13] mr-2" />
             <input
               type="text"
               placeholder="Phone Number"
-              className="border rounded-md px-3 py-2 w-full focus:ring-2 focus:ring-[#a75a13]"
+              className="bg-transparent outline-none w-full"
               value={formData.phone}
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
               }
             />
           </div>
-          <div className="flex items-center gap-2">
-            <FaMapMarkerAlt className="text-[#a75a13]" />
+
+          {/* Address */}
+          <div className="flex items-start bg-gray-50 border rounded-lg px-3 py-2">
+            <FaMapMarkerAlt className="text-[#a75a13] mt-2 mr-2" />
             <textarea
               placeholder="Delivery Address"
               rows="2"
-              className="border rounded-md px-3 py-2 w-full focus:ring-2 focus:ring-[#a75a13]"
+              className="bg-transparent outline-none w-full resize-none"
               value={formData.address}
               onChange={(e) =>
                 setFormData({ ...formData, address: e.target.value })
@@ -159,9 +164,9 @@ const RawMaterials = () => {
             />
           </div>
 
-          {/* Quantity Selector */}
-          <div className="flex items-center gap-2">
-            <span className="font-medium text-[#3D2B1F]">Quantity:</span>
+          {/* Quantity */}
+          <div className="flex items-center bg-gray-50 border rounded-lg px-3 py-2">
+            <FaShoppingCart className="text-[#a75a13] mr-2" />
             <input
               type="number"
               min="1"
@@ -169,16 +174,22 @@ const RawMaterials = () => {
               onChange={(e) =>
                 setFormData({ ...formData, quantity: e.target.value })
               }
-              className="border rounded-md px-3 py-2 w-20 focus:ring-2 focus:ring-[#a75a13]"
+              className="bg-transparent outline-none w-20"
             />
+            <span className="ml-auto font-semibold text-green-700">
+              Total: ₹
+              {parseInt(selectedProduct.price.replace("₹", "")) *
+                (formData.quantity || 1)}
+            </span>
           </div>
 
           {/* Order Notes */}
-          <div>
+          <div className="flex items-start bg-gray-50 border rounded-lg px-3 py-2">
+            <FaStickyNote className="text-[#a75a13] mt-2 mr-2" />
             <textarea
               placeholder="Order Notes (optional)"
               rows="2"
-              className="border rounded-md px-3 py-2 w-full focus:ring-2 focus:ring-[#a75a13]"
+              className="bg-transparent outline-none w-full resize-none"
               value={formData.notes || ""}
               onChange={(e) =>
                 setFormData({ ...formData, notes: e.target.value })
@@ -190,7 +201,7 @@ const RawMaterials = () => {
         {/* Place Order Button */}
         <button
           onClick={handlePlaceOrder}
-          className="w-full mt-5 bg-[#a75a13] hover:bg-[#8c490f] text-white py-3 rounded-md font-medium transition"
+          className="cursor-pointer w-full mt-6 bg-[#a75a13] hover:bg-[#8c490f] text-white py-3 rounded-lg font-medium shadow-md transition"
         >
           Place Order
         </button>
@@ -198,6 +209,7 @@ const RawMaterials = () => {
     </motion.div>
   )}
 </AnimatePresence>
+
 
     </>
   );
